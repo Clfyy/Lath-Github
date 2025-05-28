@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${post.title}">Detail Post</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1 th:text="${post.title}">Judul Post</h1>
+    <p><small th:text="${#dates.format(post.createdAt, 'dd MMM yyyy HH:mm')}"></small></p>
+    <div th:text="${post.content}">Isi post akan muncul di sini</div>
+    <hr/>
+    <a href="/">Kembali ke daftar post</a>
+</body>
+</html>

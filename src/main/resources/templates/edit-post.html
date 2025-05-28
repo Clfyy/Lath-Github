@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Post</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1>Edit Post</h1>
+
+    <form th:action="@{/posts/update}" th:object="${post}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Judul:</label><br>
+            <input type="text" th:field="*{title}"/>
+        </div>
+        <br/>
+        <div>
+            <label>Isi:</label><br/>
+            <textarea th:field="*{content}" rows="10"></textarea>
+        </div>
+        <br/>
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/">Kembali</a>
+</body>
+</html>

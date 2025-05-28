@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Buat Post Baru</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1>Buat Post Baru</h1>
+
+    <div th:if="${error}" style="color: red;">
+        <p th:text="${error}"></p>
+    </div>
+
+    <form th:action="@{/posts}" th:object="${post}" method="post">
+        <div>
+            <label>Judul:</label><br>
+            <input type="text" th:field="*{title}" placeholder="Masukkan judul"/>
+        </div>
+        <br>
+        <div>
+            <label>Isi:</label><br>
+            <textarea th:field="*{content}" placeholder="Tulis isi post di sini" rows="10"></textarea>
+        </div>
+        <br>
+        <button type="submit">Simpan</button>
+    </form>
+    <br>
+    <a href="/">Kembali ke daftar post</a>
+</body>
+</html>
