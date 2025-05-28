@@ -45,7 +45,7 @@ public class PostController {
     public String newPostForm(Model model) {
         model.addAttribute("post", new Post());
         model.addAttribute("error", "");
-        return "new-post";
+        return "new_post";
     }
 
     // Simpan post baru
@@ -55,7 +55,7 @@ public class PostController {
                 || post.getContent() == null || post.getContent().trim().isEmpty()) {
             model.addAttribute("post", post);
             model.addAttribute("error", "Judul dan isi tidak boleh kosong.");
-            return "new-post";
+            return "new_post";
         }
 
         repo.save(post);
@@ -71,7 +71,7 @@ public class PostController {
         }
         model.addAttribute("post", post);
         model.addAttribute("error", "");
-        return "edit-post";
+        return "edit_post";
     }
 
     // Simpan hasil edit
@@ -81,7 +81,7 @@ public class PostController {
                 || post.getContent() == null || post.getContent().trim().isEmpty()) {
             model.addAttribute("post", post);
             model.addAttribute("error", "Judul dan isi tidak boleh kosong.");
-            return "edit-post";
+            return "edit_post";
         }
 
         repo.save(post);
